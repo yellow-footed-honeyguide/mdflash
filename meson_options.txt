@@ -1,0 +1,2 @@
+option('install_exec', type: 'boolean', value: false, description: 'Install executable to system path')
+
