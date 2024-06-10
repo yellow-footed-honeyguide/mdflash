@@ -1,5 +1,5 @@
 # mdflash - Lightning-Fast Markdown Previews!
-Effortlessly save and navigate to your favorite directories on any Unix-like system! Experience the power of instant Markdown previews, just like GitHub, right in your terminal! ⚡️
+Experience the power of instant Markdown previews, just like GitHub, right in your terminal! ⚡️
 
 ## Description
 mdflash is a lightning-fast utility written in pure C that allows you to preview your Markdown documents with near-zero dependencies! 🚀
