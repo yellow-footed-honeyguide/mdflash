@@ -44,7 +44,7 @@ meson ..
 ninja
 ```
 
-Now you can move nooks to /usr/local/bin/
+Now you can move mdflash to /usr/local/bin/
 ```
 sudo mv ./mdflash /usr/local/bin/
 ```
@@ -67,7 +67,7 @@ Thank you for considering contributing to this project! Here’s how you can hel
 1. **Fork & Clone the Repository**
    - Fork the repo on GitHub and clone it to your local machine:
      ```sh
-     git clone https://github.com/your-username/your-repo.git
+     git clone https://github.com/yellow-footed-honeyguide/mdflash.git
      cd your-repo
      ```
 
