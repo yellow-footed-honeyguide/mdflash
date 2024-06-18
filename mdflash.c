@@ -6,7 +6,7 @@
 #define MAX_LINE_LENGTH 1024
 
 // Load CSS styles for the text view
-void load_css(GtkTextView *text_view) {
+static void load_css(GtkTextView *text_view) {
     // Create a new CSS provider
     GtkCssProvider *provider = gtk_css_provider_new();
     
@@ -19,12 +19,13 @@ void load_css(GtkTextView *text_view) {
                                               GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
     
     // Define the CSS styles
-    const gchar *css = "textview { background-color: white; font-size: 16px; }"
-                       "textview text { background-color: white; }"
-                       "textview text:selected { background-color: #3399ff; }"
-                       ".code-block { background-color: #f6f8fa; font-family: monospace; }"
-                       ".heading { background-color: #f0f0f0; }"
-                       ".thin-line { background-color: #f0f0f0; min-height: 1px; }";
+    const char *css = "textview { background-color: white; font-size: 16px; }"
+                      "textview text { background-color: white; }"
+                      "textview text:selected { background-color: #3399ff; }"
+                      ".code-block { background-color: #f6f8fa; font-family: monospace; }"
+                      ".heading { background-color: #f0f0f0; }"
+                      ".thin-line { background-color: #f0f0f0; min-height: 1px; }"
+                      ".container-box { background-color: white; }";
     
     // Load the CSS data into the provider
     gtk_css_provider_load_from_data(provider, css, -1, NULL);
@@ -34,7 +35,7 @@ void load_css(GtkTextView *text_view) {
 }
 
 // Display the contents of the README.md file in a text view
-void display_readme(const gchar *filename) {
+static void display_readme(const char *filename) {
     // Create a new top-level window
     GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     
@@ -115,7 +116,7 @@ void display_readme(const gchar *filename) {
             gtk_text_buffer_insert_with_tags(buffer, &iter, line + 2, -1, tag, NULL);
             
             // Insert a newline character
-            gtk_text_buffer_insert(buffer, &iter, "\n", -1);
+            gtk_text_buffer_insert(buffer, &iter, "", -1);
         }
         // Check if the line starts with "## " (h2 heading)
         else if (strncmp(line, "## ", 3) == 0) {
@@ -129,7 +130,7 @@ void display_readme(const gchar *filename) {
             gtk_text_buffer_insert_with_tags(buffer, &iter, line + 3, -1, tag, NULL);
             
             // Insert a newline character
-            gtk_text_buffer_insert(buffer, &iter, "\n", -1);
+            gtk_text_buffer_insert(buffer, &iter, "", -1);
             
             // Create a tag for a thin line
             GtkTextTag *line_tag = gtk_text_buffer_create_tag(buffer, NULL,
@@ -167,9 +168,25 @@ void display_readme(const gchar *filename) {
     
     // Add the text view to the scrolled window
     gtk_container_add(GTK_CONTAINER(scrolled_window), text_view);
+
+    // Create a new box container to hold the scrolled window
+    GtkWidget *box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+
+    // Add padding to the box container
+    gtk_container_set_border_width(GTK_CONTAINER(box), 40);
+
+    // Set the border width of the scrolled window
+    gtk_container_set_border_width(GTK_CONTAINER(scrolled_window), 10);
+
+    // Add a CSS class to the box container
+    GtkStyleContext *context = gtk_widget_get_style_context(box);
+    gtk_style_context_add_class(context, "container-box");
+
+    // Add the scrolled window to the box container
+    gtk_box_pack_start(GTK_BOX(box), scrolled_window, TRUE, TRUE, 0);
     
-    // Add the scrolled window to the main window
-    gtk_container_add(GTK_CONTAINER(window), scrolled_window);
+    // Add the box container to the main window
+    gtk_container_add(GTK_CONTAINER(window), box);
 
     // Load the CSS styles for the text view
     load_css(GTK_TEXT_VIEW(text_view));
@@ -188,7 +205,7 @@ int main(int argc, char *argv[]) {
     // Check if the correct number of arguments is provided
     if (argc != 2) {
         fprintf(stderr, "Usage: %s <README.md>\n", argv[0]);
-        exit(1);
+        return 1;
     }
 
     // Initialize GTK
