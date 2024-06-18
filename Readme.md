@@ -59,6 +59,7 @@ $ mdflash Readme.md
 
 ### Executing program
 ![usage-example](assets/mdflash.gif)
+Demo will be here soon...
 
 
 ## Contributing
@@ -89,7 +90,6 @@ Thank you for considering contributing to this project! Here’s how you can hel
      ```sh
      git push origin feature/your-feature-name
      ```
----
 
 Thank you for your contributions!
 
