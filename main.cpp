@@ -65,7 +65,15 @@ public:
             QFile file(fileName);
             if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
                 QTextStream in(&file);
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+                in.setEncoding(QStringConverter::Utf8);
+#elif QT_VERSION >= QT_VERSION_CHECK(5, 15, 0) && QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
                 in.setCodec("UTF-8");
+#else
+#error "Qt version less than 5.15 (LTS) is incomatible"
+#endif
+
                 QString content = in.readAll();
                 textEdit->setHtml(MarkdownProcessor::processContent(content));
                 file.close();

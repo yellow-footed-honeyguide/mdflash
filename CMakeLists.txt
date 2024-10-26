@@ -8,14 +8,22 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt5
+        COMPONENTS Widgets)
+if (Qt5_FOUND)
+    set(QtVersion 5)
+else ()
+    find_package(Qt6 REQUIRED
+            COMPONENTS Widgets)
+    set(QtVersion 6)
+endif ()
 
 add_executable(mdflash
     main.cpp
     markdown_processor.cpp
 )
 
-target_link_libraries(mdflash PRIVATE Qt5::Widgets)
+target_link_libraries(mdflash PRIVATE Qt${QtVersion}::Widgets)
 
 install(TARGETS mdflash DESTINATION bin)
 
