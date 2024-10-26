@@ -1,6 +1,6 @@
 # mdflash - Lightning - Fast Markdown Previews !
 
-Experience the power of instant Markdown previews, just like GitHub, right here, rigth now! ⚡️
+Experience the power of instant Markdown previews, just like GitHub, right here, right now! ⚡️
 
 ***
 > **Note:** This project is currently under active development. Some features may be incomplete or subject to change.
@@ -13,7 +13,8 @@ Experience the power of instant Markdown previews, just like GitHub, right here,
 
 
 ## Description
-mdflash is a lightning-fast utility written in pure C that allows you to preview your Markdown documents with near-zero dependencies! 🚀
+mdflash is a lightning-fast utility written in pure C that allows you to preview your Markdown documents with near-zero
+dependencies! 🚀
 
 Get a taste of GitHub-style Markdown rendering without ever leaving the comfort of your command line! 😎
 
@@ -22,23 +23,28 @@ Get a taste of GitHub-style Markdown rendering without ever leaving the comfort 
 ## Features
 🌋 Blazing Fast! ⚡️
 
-Harnessing the raw power of C, mdflash renders your Markdown files at breakneck speeds! Watch your documents come to life in an instant! 🏎💨
+Harnessing the raw power of C, mdflash renders your Markdown files at breakneck speeds! Watch your documents come to
+life in an instant! 🏎💨
 
 🌋 GitHub-Style Previews! 👀
 
-Experience the familiarity and elegance of GitHub's Markdown rendering, right in your terminal! It's like having a piece of GitHub wherever you go! 🐙
+Experience the familiarity and elegance of GitHub's Markdown rendering, right in your terminal! It's like having a
+piece of GitHub wherever you go! 🐙
 
 🌋 Minimal Dependencies! 🍃
 
-mdflash stands tall and proud with almost zero dependencies! It's a self-contained powerhouse that won't weigh you down! 💪
+mdflash stands tall and proud with almost zero dependencies! It's a self-contained powerhouse that won't weigh you
+down! 💪
 
 🌋 Cross-Platform Compatibility! 🌍
 
-Whether you're on Linux, macOS, or Windows, mdflash feels right at home! It's the globe-trotting adventurer of Markdown previews! 🗺
+Whether you're on Linux, macOS, or Windows, mdflash feels right at home! It's the globe-trotting adventurer of Markdown
+previews! 🗺
 
 🌋 Open-Source Awesomeness! 🌟
 
-Crafted with love and care, mdflash is an open-source marvel that keeps getting better with every contribution! Join the community and make your mark! 🤝
+Crafted with love and care, mdflash is an open-source marvel that keeps getting better with every contribution! Join
+the community and make your mark! 🤝
 
 ## Dependencies
 
@@ -121,7 +127,8 @@ Thank you for your contributions!
 ## License
 This project is licensed under the MIT License.
 
-mdflash uses the Qt framework, which is available under various licenses including GPL and LGPL. For more information about Qt licensing, please visit the Qt Licensing page.
+mdflash uses the Qt framework, which is available under various licenses including GPL and LGPL. For more information
+about Qt licensing, please visit the Qt Licensing page.
 
 ## Qt Attribution
 This software uses the Qt framework (version 5.x) under the LGPL v3 license.
