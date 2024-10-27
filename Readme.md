@@ -44,7 +44,7 @@ Crafted with love and care, mdflash is an open-source marvel that keeps getting 
 
 mdflash relies on the following dependency:
 
-- Qt 5
+- Qt 5/6
 
 ## Getting Started
 
@@ -124,6 +124,6 @@ This project is licensed under the MIT License.
 mdflash uses the Qt framework, which is available under various licenses including GPL and LGPL. For more information about Qt licensing, please visit the Qt Licensing page.
 
 ## Qt Attribution
-This software uses the Qt framework (version 5.x) under the LGPL v3 license.
+This software uses the Qt framework (version 5.x/6.x) under the LGPL v3 license.
 Qt is Copyright (C) 2023 The Qt Company Ltd. and other contributors.
 For more details, see https://www.qt.io/terms-conditions/
